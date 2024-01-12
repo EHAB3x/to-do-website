@@ -1,0 +1,88 @@
+.sidebar{
+    max-width: 200px;
+    height: 100%;
+    padding: 20px 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.sidebar.close{
+    width: 100px;
+}
+.sidebar.close .sidebar_header h1,
+.sidebar.close .sidebar_body nav a span{
+    display: none;
+}
+.sidebar  .sidebar_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.sidebar  .sidebar_header svg{
+    color: #5458b4;
+    font-size: 35px;
+}
+.sidebar .sidebar_body nav{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+}
+.sidebar .sidebar_body nav a{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    gap: 10px;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    border: 1px solid gray,
+
+}
+.sidebar .sidebar_body nav a.active svg{
+    color: white;
+}
+.sidebar .sidebar_body nav a svg{
+    color: #5458b4;
+}
+.sidebar .sidebar_footer{
+    display: flex;
+    justify-content: end;
+}
+.sidebar .sidebar_footer svg{
+    cursor: pointer;
+    font-size: 22px;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.sidebar.close .sidebar_footer svg{
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
