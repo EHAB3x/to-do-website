@@ -4,7 +4,7 @@ import { FaTasks } from "react-icons/fa";
 import { MdOutlineTaskAlt, MdFavorite, MdDelete } from "react-icons/md";
 import { RxEnter } from "react-icons/rx";
 import './Slidebar.css'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 const Sidebar = () => {
     const navLinkStyle=({isActive})=>{
         return{
@@ -27,14 +27,14 @@ const Sidebar = () => {
     },[])
     return(
         <aside className='sidebar'>
-            <div className="sidebar_header">
+            <Link to={'/'} className="sidebar_header">
                 <HiBriefcase />
                 <h1>ToDo</h1>
-            </div>
+            </Link>
 
             <div className="sidebar_body">
                 <nav>
-                    <NavLink style={navLinkStyle} to={'/'}><FaTasks /> <span>Tasks</span></NavLink>
+                    <NavLink style={navLinkStyle} to={'/tasks'}><FaTasks /> <span>Tasks</span></NavLink>
                     <NavLink style={navLinkStyle} to={'/fav'}><MdFavorite /> <span>Fav</span></NavLink> 
                     <NavLink style={navLinkStyle} to={'/delete'}><MdDelete /> <span>Deleted</span></NavLink> 
                     <NavLink style={navLinkStyle} to={'/done'}><MdOutlineTaskAlt /> <span>Done</span></NavLink>  
