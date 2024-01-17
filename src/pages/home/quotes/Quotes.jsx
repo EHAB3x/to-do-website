@@ -13,7 +13,6 @@ const Quotes = () => {
         };
         getQuote();
     },[])
-    console.log(quote);
   return (
     <div className='quote'>
         <div className="top">

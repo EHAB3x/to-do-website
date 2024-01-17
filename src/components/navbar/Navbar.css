@@ -89,7 +89,7 @@
 @media screen and (max-width: 768px) {
     .navbar{
         flex-direction: column;
-        width: 90%;
+        width: 85%;
         gap: 20px;
     }
     .navbar form input{

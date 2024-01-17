@@ -55,7 +55,7 @@ const AddTask = () => {
         <label htmlFor="date">End Date </label>
         <input className='data' type="date" id='date'  value={date} onChange={(e)=> setDate(e.target.value)} required/>
 
-        <input type="submit" id='date' onClick={e=> submit(e)}/>
+        <input type="submit" id='' onClick={e=> submit(e)}/>
     </form>
   )
 }

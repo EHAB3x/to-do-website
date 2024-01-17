@@ -14,6 +14,7 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: fixed;
 }
 .sidebar.close{
     width: 100px;
@@ -86,7 +87,7 @@
 
 @media screen and (max-width: 768px) {
     .sidebar{
-        width: 180px;
+        width: 130px;
     }
     .sidebar  .sidebar_header{
         font-size: 20px;

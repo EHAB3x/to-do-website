@@ -7,7 +7,7 @@ const Percentage = () => {
     var percent = 0;
 
     tasks.forEach(quote => {
-        if(quote.status === "in progress"){
+        if(quote.status === "done"){
             percent++;
         }
     });
@@ -20,7 +20,6 @@ const Percentage = () => {
         }
     },[percent, tasks.length]);
 
-    console.log(percentage);
   return (
     <div className='percentage'>
         <h2>Your Progress</h2>
