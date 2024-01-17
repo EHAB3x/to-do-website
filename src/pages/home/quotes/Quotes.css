@@ -1,0 +1,38 @@
+.quote{
+    background-color: white;
+    padding:10px 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 2px 2px 8px 0px;
+}
+.quote .top{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+.quote .top::before{
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 3px;
+    background-color: #5458b4;
+    left: 0%;
+    top: 110%;
+
+}
+.quote .top svg{
+    font-size: 20px;
+    color: #5458b4;
+    margin-right: 10px;
+}
+.quote .body blockquote svg{
+    font-size: 10px;
+}
+.quote .body blockquote p{
+    width: fit-content;
+}
