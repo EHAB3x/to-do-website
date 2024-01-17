@@ -1,0 +1,94 @@
+.navbar .taskDetails{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    top: -100vh;
+    padding: 10px 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 2px 2px 8px 0px;
+    transition: .5s ease-out;
+    -webkit-transition: .5s ease-out;
+    -moz-transition: .5s ease-out;
+    -ms-transition: .5s ease-out;
+    -o-transition: .5s ease-out;
+}
+.navbar .taskDetails.show{
+    display: flex;
+    top: 120%;
+
+}
+.navbar .taskDetails label:first-child{
+    margin-top: 20px;
+}
+.navbar .taskDetails .close{
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: #5458b4;
+    position: absolute;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    right: 16px;
+    cursor: pointer;
+}
+.navbar .taskDetails .close::before{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 15px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+    -webkit-transform: translate(-50%,-50%) rotate(45deg);
+    -moz-transform: translate(-50%,-50%) rotate(45deg);
+    -ms-transform: translate(-50%,-50%) rotate(45deg);
+    -o-transform: translate(-50%,-50%) rotate(45deg);
+}
+.navbar .taskDetails .close::after{
+    content: "";
+    display: block;
+    width: 2px;
+    height: 15px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    -webkit-transform: translate(-50%,-50%) rotate(-45deg);
+    -moz-transform: translate(-50%,-50%) rotate(-45deg);
+    -ms-transform: translate(-50%,-50%) rotate(-45deg);
+    -o-transform: translate(-50%,-50%) rotate(-45deg);
+}
+.navbar .taskDetails input{
+    background-color: #f5f7fb;
+    outline: 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0 20px 0;
+    width: 100%;
+}
+.navbar .taskDetails input[type = "submit"]{
+    background-color: #5458b4;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar .taskDetails{
+        width: 100%;
+    }
+}

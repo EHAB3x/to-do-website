@@ -13,12 +13,13 @@
     -o-border-radius: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 10px;
+    position: relative;
 }
-.navbar form{
+.navbar .search{
     display: flex;
     position: relative;
 }
-.navbar form input{
+.navbar .search input{
     background-color: #f5f7fb;
     padding:10px 10px 10px 30px;
     border-radius: 8px;
@@ -27,7 +28,7 @@
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
 }
-.navbar form svg{
+.navbar .search svg{
     position: absolute;
     left: 5px;
     top: 50%;
@@ -52,9 +53,16 @@
     -o-border-radius: 10px;
 }
 .navbar button:hover{
-     animation: shake 0.5s linear;
-     -webkit-animation: shake 0.5s linear;
+    animation: shake 0.5s linear;
+    -webkit-animation: shake 0.5s linear;
 }
+.navbar button svg{
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+
 
 @keyframes shake{
     0%{
