@@ -20,7 +20,7 @@
 .navbar .taskDetails.show{
     display: flex;
     top: 120%;
-
+    z-index: 9999;
 }
 .navbar .taskDetails label:first-child{
     margin-top: 20px;
