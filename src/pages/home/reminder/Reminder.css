@@ -34,6 +34,7 @@
 }
 .reminder .content h3{
     font-size: 15px;
+    color: black;
 }
 
 @media screen and (max-width:768px) {

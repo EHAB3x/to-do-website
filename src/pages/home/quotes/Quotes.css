@@ -1,6 +1,6 @@
 .quote{
     background-color: white;
-    height: fit-content;
+    height: 241px;
     padding:20px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -11,7 +11,7 @@
 }
 .quote .top{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     margin-bottom: 20px;
@@ -31,9 +31,18 @@
     color: #5458b4;
     margin-right: 10px;
 }
-.quote .body blockquote svg{
-    font-size: 10px;
+.quote .body q::after{
+    font-size: 18px;
 }
-.quote .body blockquote p{
-    width: fit-content;
+.quote .body q::before{
+    margin-right: 3px;
+}
+.quote .body q::after{
+    margin-left: 3px;
+}
+
+@media screen and (max-width: 768px){
+    .quote{
+        height: fit-content;
+    }
 }

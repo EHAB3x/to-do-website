@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { BsFillChatSquareQuoteFill } from "react-icons/bs";
-import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import './Quotes.css'
 
 const Quotes = () => {
@@ -20,7 +19,7 @@ const Quotes = () => {
             <span>{quote.author}</span>
         </div>
         <div className="body">
-            <blockquote><FaQuoteLeft /><p>{quote.content}</p><FaQuoteRight /></blockquote>
+            <q>{quote.content}</q>
         </div>
     </div>
   )

@@ -17,16 +17,16 @@
     color: gray;
 }
 .percentage .progress{
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    line-height: 150px;
+    line-height: 110px;
     text-align: center;
-    margin: 30px auto;
+    margin: 20px auto;
     position: relative;
 }
 .percentage .progress h3{
@@ -42,10 +42,10 @@
     height: fit-content;
     line-height: 0;
     text-wrap: nowrap;
-    font-size: 13px;
-    font-weight: normal;
+    font-size: 12px;
+    font-weight: bold;
     left: 50%;
-    top: 65%;
+    top: 70%;
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);

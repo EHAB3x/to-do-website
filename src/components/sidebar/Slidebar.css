@@ -38,7 +38,7 @@
 .sidebar .sidebar_body nav{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 30px;
 }
 .sidebar .sidebar_body nav a{
@@ -61,7 +61,7 @@
 }
 .sidebar .sidebar_footer{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 .sidebar .sidebar_footer svg{
     cursor: pointer;
@@ -87,7 +87,13 @@
 
 @media screen and (max-width: 768px) {
     .sidebar{
-        width: 130px;
+        max-width: 100%;
+        height: 100px;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        position: fixed;
+        z-index: 9999;
     }
     .sidebar  .sidebar_header{
         font-size: 20px;
@@ -96,7 +102,16 @@
         color: #5458b4;
         font-size: 30px;
     }
+    .sidebar .sidebar_body nav{
+        flex-direction: row;
+    }
     .sidebar .sidebar_body nav a{
         font-size: 20px;
+    }
+    .sidebar .sidebar_body nav a span{
+        display: none;
+    }
+    .sidebar .sidebar_footer{
+        display: none;
     }
 }

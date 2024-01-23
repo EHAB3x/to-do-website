@@ -25,7 +25,7 @@ const Percentage = () => {
         <h2>Your Progress</h2>
         <p>Here you can see how far you go</p>
         <div className={`progress bg-gradient-to-r from-indigo-500  to-emerald-500`}>
-            <h3>{percentage}%</h3>
+            <h3>{+percentage.toFixed()}%</h3>
         </div>
     </div>
   )
