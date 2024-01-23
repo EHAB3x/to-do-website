@@ -40,6 +40,52 @@
     font-size: 20px;
     font-weight: bold;
 }
+.navbar .search .searchResult{
+    position: absolute;
+    left: 0;
+    top: calc(100% + 15px);
+    background-color: white;
+    width: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    z-index: 999;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.navbar .search .searchResult a{
+    transition: 0.3s ease-in-out;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out;
+    -ms-transition: 0.3s ease-in-out;
+    -o-transition: 0.3s ease-in-out;
+    padding: 5px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.navbar .search .searchResult a:hover{
+    background-color: #5458b4;
+    color: white;
+}
+.navbar .search .searchResult a h2{
+    font-weight: bold;
+}
+.navbar .search .searchResult a p{
+    font-size: 15px;
+}
 .navbar button{
     display: flex;
     align-items: center;

@@ -62,7 +62,6 @@ import { useSelector } from 'react-redux';
   })
   
   const labels = days.map(day =>{
-    console.log(day);
     return [day];
   });
   
