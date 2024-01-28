@@ -52,7 +52,7 @@ import { useSelector } from 'react-redux';
     });
   tasks.forEach((task,index) =>{
     dates.forEach((dat,ind)=>{
-      if(task.date === dat && task.status === "in progress"){
+      if(task.date === dat && task.status === false){
         results[ind][dat] += 1;
       }
       if(task.date === dat){

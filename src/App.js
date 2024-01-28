@@ -10,6 +10,7 @@ import Chart from './pages/home/chart/Chart';
 import Task from './pages/tasks/Task';
 import Fav from './pages/fav/Fav';
 import Done from './pages/done/Done';
+import Delete from './pages/delete/Delete';
 
 function App() {
   return (
@@ -37,6 +38,8 @@ function App() {
             <Route path='/fav' element={<Fav/>}/>
 
             <Route path='/done' element={<Done/>}/>
+
+            <Route path='/delete' element={<Delete/>}/>
           </Routes>
         </div>
       </div>
