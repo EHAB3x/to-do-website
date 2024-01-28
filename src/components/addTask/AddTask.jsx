@@ -19,7 +19,7 @@ const AddTask = () => {
                     inp.classList.add("border-2","border-rose-500");
                     count++;
                 }
-            })
+        })
             if(count === 0){
                 dispatch(addTask({title,desc,category,date,status:"in progress"}))
                 setTitle('')
@@ -28,6 +28,9 @@ const AddTask = () => {
                 setDate('')
                 const addTaskForm = document.querySelector('.taskDetails');
                 addTaskForm.classList.remove('show')
+                inps.forEach((inp)=>{
+                        inp.classList.remove("border-2","border-rose-500");
+                })
             }
     }
     

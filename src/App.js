@@ -7,6 +7,7 @@ import Quotes from './pages/home/quotes/Quotes';
 import Percentage from './pages/home/percentage/Percentage';
 import Reminder from './pages/home/reminder/Reminder';
 import Chart from './pages/home/chart/Chart';
+import Task from './pages/tasks/Task';
 
 function App() {
   return (
@@ -19,15 +20,17 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={
-            <>
-              <div className='sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
-                <Quotes/>
-                <Percentage/>
-                <Reminder />
-              </div>
-              <Chart />
-            </>
+              <>
+                <div className='sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
+                  <Quotes/>
+                  <Percentage/>
+                  <Reminder />
+                </div>
+                <Chart />
+              </>
             }/>
+
+            <Route path='/tasks' element={<Task/>}/>
           </Routes>
         </div>
       </div>

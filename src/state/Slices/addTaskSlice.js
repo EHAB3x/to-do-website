@@ -7,9 +7,12 @@ export const taskSlice = createSlice({
         addTask:(state,action)=>{
             const taskClone = {id:state.length,...action.payload, doneDate:null};
             state.push(taskClone);
-        }
+        },
+        deleteTask:(state,action)=>{
+            return state.filter((task) => task.id !== action.payload.id)
+        },
     }
 })
 
-export const {addTask} = taskSlice.actions;
+export const {addTask,deleteTask} = taskSlice.actions;
 export default taskSlice.reducer;

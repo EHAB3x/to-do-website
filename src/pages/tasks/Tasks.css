@@ -1,0 +1,121 @@
+.tasks .task{
+    background-color: white;
+    max-height: 250px;
+    padding:20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 2px 2px 8px 0px;
+    position: relative;
+}
+.tasks .task::before{
+    content: "";
+    position: absolute;
+    width: 5%;
+    height: calc(100% + 10px);
+    background-color: #5458b4;
+    left: -5px;
+    top: -5px;
+    z-index: -1;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: .5s ease-in-out;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+}
+/* .tasks .task:hover::before{
+    width: calc(100% + 5px);
+} */
+.tasks .task.delete::before{
+    width: calc(100% + 5px);
+    background-color: #e91e63;
+}
+.tasks .task .top{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.tasks .task .top::after{
+    content: "";
+    position: absolute;
+    width: 25%;
+    height: 3px;
+    background-color: #5458b4;
+    left: 0%;
+    top: 110%;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+.tasks .task.delete .top::after{
+    background-color: #e91e63;
+}
+.tasks .task.delete .top .left{
+    text-decoration: line-through;
+}
+.tasks .task .top .left h2{
+    font-weight: bold;
+}
+.tasks .task .top .left p{
+    font-size: 13px;
+}
+.tasks .task .top .right{
+    display: flex;
+    align-items: center;
+}
+.tasks .task .top .right button{
+    background-color: #5458b4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+.tasks .task.delete .top .right button{
+    background-color: #e91e63;
+}
+.tasks .task .top .right button:hover{
+    background-color: #404399;
+}
+.tasks .task.delete .mid{
+   text-decoration: line-through;
+}
+.tasks .task .bottom{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+}
+.tasks .task .bottom svg{
+    cursor: pointer;
+}
+.tasks .task .bottom svg.fav{
+    fill: transparent;
+    stroke: red;
+    stroke-opacity: 1;
+    stroke-width: 20px;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+.tasks .task .bottom svg.fav.fill{
+    fill: red;
+}
