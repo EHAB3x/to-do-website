@@ -1,4 +1,5 @@
-import './Tasks.css';
+import React from 'react'
+import './Fav.css'
 import { FaHeart } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
@@ -9,11 +10,11 @@ import { useState } from 'react';
 import { addToFavTasks } from '../../state/Slices/favTasks';
 import { addToFinishedTasks } from '../../state/Slices/finishedTasksSlice';
 import { Link } from 'react-router-dom';
-const Task = () => {
+const Fav = () => {
     const[deleteClass,setDeleteClass] = useState([]);
     const[finishClass,setFinishClass] = useState([]);
 
-    const tasks = useSelector(state => state.tasks);
+    const favTasks = useSelector(state => state.favTasks);
     const dispatch = useDispatch();
 
     const deletedTask =(deletedTask)=>{
@@ -35,7 +36,7 @@ const Task = () => {
     }
   return (
     <div  className='tasks sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
-        {tasks.map(task =>(
+        {favTasks.map(task =>(
             <div className={`task ${task.status === 'done' ?'hidden':''}  ${finishClass.includes(task.id) ?'finish' :''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
                 <div className="top">
                     <div className='left'>
@@ -69,4 +70,4 @@ const Task = () => {
   )
 }
 
-export default Task
+export default Fav

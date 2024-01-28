@@ -8,6 +8,7 @@ import Percentage from './pages/home/percentage/Percentage';
 import Reminder from './pages/home/reminder/Reminder';
 import Chart from './pages/home/chart/Chart';
 import Task from './pages/tasks/Task';
+import Fav from './pages/fav/Fav';
 
 function App() {
   return (
@@ -31,6 +32,8 @@ function App() {
             }/>
 
             <Route path='/tasks' element={<Task/>}/>
+
+            <Route path='/fav' element={<Fav/>}/>
           </Routes>
         </div>
       </div>
