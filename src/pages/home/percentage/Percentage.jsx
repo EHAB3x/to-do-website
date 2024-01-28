@@ -7,7 +7,7 @@ const Percentage = () => {
     var percent = 0;
 
     tasks.forEach(quote => {
-        if(quote.status === "done"){
+        if(quote.status === true){
             percent++;
         }
     });
