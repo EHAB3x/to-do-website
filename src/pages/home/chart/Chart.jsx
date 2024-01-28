@@ -73,14 +73,14 @@ import { useSelector } from 'react-redux';
         data:  results.map((result,index)=>{
           return [((length[index][dates[index]] - result[dates[index]]) / length[index][dates[index]]) * 100]
         }),
-        backgroundColor: 'rgba(84, 88, 180, 1)',
+        backgroundColor: 'rgba(16, 185, 129, 0.8)',
       },
       {
         label: 'In Progress',
         data:  results.map((result,index)=>{
           return [(result[dates[index]] / length[index][dates[index]]) * 100]
         }),
-        backgroundColor: 'rgba(16, 185, 129, 0.8)',
+        backgroundColor: 'rgba(84, 88, 180, 1)',
       },
     ],
   };

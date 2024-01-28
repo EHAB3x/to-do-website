@@ -3,12 +3,15 @@ import { FaHeart } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteTask } from '../../state/Slices/addTaskSlice';
+import { deleteTask, editStatus } from '../../state/Slices/addTaskSlice';
 import { addToDeletedTasks } from '../../state/Slices/deletedTasks';
 import { useState } from 'react';
 import { addToFavTasks } from '../../state/Slices/favTasks';
+import { addToFinishedTasks } from '../../state/Slices/finishedTasksSlice';
 const Task = () => {
     const[deleteClass,setDeleteClass] = useState([]);
+    const[finishClass,setFinishClass] = useState([]);
+
     const tasks = useSelector(state => state.tasks);
     const dispatch = useDispatch();
 
@@ -21,13 +24,18 @@ const Task = () => {
         }, 700);
     }
 
-    const favtasks = (favtask)=>{
-        dispatch(addToFavTasks(favtask))
+    const finishedTask =(fTask)=>{
+        setFinishClass([...finishClass,fTask.id]);
+        console.log(fTask.id);
+        setTimeout(() => {
+            dispatch(addToFinishedTasks(fTask));
+            dispatch(editStatus(fTask));
+        }, 700);
     }
   return (
     <div  className='tasks sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
         {tasks.map(task =>(
-            <div className={`task ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
+            <div className={`task ${task.status === 'done' ?'hidden':''}  ${finishClass.includes(task.id) ?'finish' :''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
                 <div className="top">
                     <div className='left'>
                         <h2>{task.title}</h2>
@@ -35,7 +43,7 @@ const Task = () => {
                     </div>
 
                     <div className='right'>
-                        <button>Done</button>
+                        <button onClick={()=> finishedTask(task)}>Done</button>
                     </div>
                 </div>
 
@@ -49,7 +57,7 @@ const Task = () => {
                         <FaHeart className='fav' onClick={(e)=>{
                             e.currentTarget.classList.toggle('fill')
                             dispatch(addToFavTasks({...task,key:task.id}));
-                            }}/>
+                        }}/>
                         <CiEdit className='edit'/>
                         <MdDeleteOutline className='del'  onClick={()=>deletedTask(task)}/>
                     </div>

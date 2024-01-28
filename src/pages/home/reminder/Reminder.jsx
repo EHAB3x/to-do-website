@@ -9,7 +9,7 @@ const Reminder = () => {
     let tasksNumber = 0;
 
     tasks.forEach(task => {
-        if(task.date === today){
+        if(task.date === today && task.status=== "in progress"){
             tasksNumber++;
         }
     });
