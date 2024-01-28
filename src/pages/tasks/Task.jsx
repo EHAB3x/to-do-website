@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteTask } from '../../state/Slices/addTaskSlice';
 import { addToDeletedTasks } from '../../state/Slices/deletedTasks';
 import { useState } from 'react';
+import { addToFavTasks } from '../../state/Slices/favTasks';
 const Task = () => {
     const[deleteClass,setDeleteClass] = useState([]);
     const tasks = useSelector(state => state.tasks);
@@ -13,12 +14,15 @@ const Task = () => {
 
     const deletedTask =(deletedTask)=>{
         setDeleteClass([...deleteClass,deletedTask.id]);
-        deleteClass.filter(id => id !== deletedTask.id)
         setTimeout(() => {
             setDeleteClass([])
             dispatch(addToDeletedTasks(deletedTask));
             dispatch(deleteTask(deletedTask));
         }, 700);
+    }
+
+    const favtasks = (favtask)=>{
+        dispatch(addToFavTasks(favtask))
     }
   return (
     <div  className='tasks sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
@@ -42,7 +46,10 @@ const Task = () => {
                 <div className="bottom mt-[8%]">
                     <p>End Date: <span>{task.date}</span></p>
                     <div className="icons">
-                        <FaHeart className='fav' onClick={(e)=>e.currentTarget.classList.toggle('fill')}/>
+                        <FaHeart className='fav' onClick={(e)=>{
+                            e.currentTarget.classList.toggle('fill')
+                            dispatch(addToFavTasks({...task,key:task.id}));
+                            }}/>
                         <CiEdit className='edit'/>
                         <MdDeleteOutline className='del'  onClick={()=>deletedTask(task)}/>
                     </div>
