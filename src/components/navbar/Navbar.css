@@ -155,3 +155,27 @@
         font-weight: bold;
     }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .navbar{
+        flex-direction: column;
+        width: 85%;
+        gap: 20px;
+    }
+    .navbar form input{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .navbar form svg{
+        position: absolute;
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        font-size: 20px;
+        font-weight: bold;
+    }
+}

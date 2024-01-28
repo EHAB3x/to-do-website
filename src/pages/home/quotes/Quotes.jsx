@@ -6,7 +6,7 @@ const Quotes = () => {
     const [quote, setQuote] =useState([]);
     useEffect(()=>{
         async function getQuote (){
-            const res = await fetch('https://api.quotable.io/quotes/random');
+            const res = await fetch('https://api.quotable.io/quotes/random');;
             const quote = await res.json();
             setQuote(quote[0]);
         };

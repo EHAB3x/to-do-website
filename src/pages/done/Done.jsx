@@ -1,4 +1,5 @@
-import './Tasks.css';
+import React from 'react'
+import './Done.css'
 import { FaHeart } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
@@ -6,11 +7,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { editDelete, editFav, editStatus } from '../../state/Slices/addTaskSlice';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-const Task = () => {
+const Done = () => {
     const[deleteClass,setDeleteClass] = useState([]);
     const[finishClass,setFinishClass] = useState([]);
 
-    const tasks = useSelector(state => state.tasks);
+    const doneTasks = useSelector(state => state.tasks);
+    console.log(doneTasks);
     const dispatch = useDispatch();
 
     const deletedTask =(deletedTask)=>{
@@ -23,14 +25,17 @@ const Task = () => {
 
     const finishedTask =(fTask)=>{
         setFinishClass([...finishClass,fTask.id]);
+        console.log(fTask.id);
         setTimeout(() => {
             dispatch(editStatus(fTask));
         }, 700);
     }
+
   return (
     <div  className='tasks sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
-        {tasks.map(task =>(
-            <div className={`task ${task.status === true ?'hidden':''} ${task.delete === true ?'hidden':''} ${finishClass.includes(task.id) ?'finish' :''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
+        {doneTasks.map(task =>(
+            task.status === true && (
+                <div className={`task ${task.status === true ? 'finish' : ''} ${task.delete === true ?'hidden':''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
                 <div className="top">
                     <div className='left'>
                         <h2>{task.title}</h2>
@@ -38,7 +43,7 @@ const Task = () => {
                     </div>
 
                     <div className='right'>
-                        <button onClick={()=> finishedTask(task)}>Done</button>
+                        <button onClick={()=> finishedTask(task)}>Restore</button>
                     </div>
                 </div>
 
@@ -57,9 +62,10 @@ const Task = () => {
                     </div>
                 </div>
             </div>
+            )
         ))}
     </div>
   )
 }
 
-export default Task
+export default Done

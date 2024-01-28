@@ -9,6 +9,7 @@ import Reminder from './pages/home/reminder/Reminder';
 import Chart from './pages/home/chart/Chart';
 import Task from './pages/tasks/Task';
 import Fav from './pages/fav/Fav';
+import Done from './pages/done/Done';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
             <Route path='/tasks' element={<Task/>}/>
 
             <Route path='/fav' element={<Fav/>}/>
+
+            <Route path='/done' element={<Done/>}/>
           </Routes>
         </div>
       </div>

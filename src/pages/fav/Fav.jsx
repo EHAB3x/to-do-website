@@ -4,25 +4,21 @@ import { FaHeart } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { MdDeleteOutline } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux'
-import { deleteTask, editFav, editStatus } from '../../state/Slices/addTaskSlice';
-import { addToDeletedTasks } from '../../state/Slices/deletedTasks';
+import { editDelete, editFav, editStatus } from '../../state/Slices/addTaskSlice';
 import { useState } from 'react';
-import { addToFavTasks } from '../../state/Slices/favTasks';
-import { addToFinishedTasks } from '../../state/Slices/finishedTasksSlice';
 import { Link } from 'react-router-dom';
 const Fav = () => {
     const[deleteClass,setDeleteClass] = useState([]);
     const[finishClass,setFinishClass] = useState([]);
 
-    const favTasks = useSelector(state => state.favTasks);
+    const favTasks = useSelector(state => state.tasks);
     const dispatch = useDispatch();
 
     const deletedTask =(deletedTask)=>{
         setDeleteClass([...deleteClass,deletedTask.id]);
         setTimeout(() => {
             setDeleteClass([])
-            dispatch(addToDeletedTasks(deletedTask));
-            dispatch(deleteTask(deletedTask));
+            dispatch(editDelete(deletedTask));
         }, 700);
     }
 
@@ -30,14 +26,14 @@ const Fav = () => {
         setFinishClass([...finishClass,fTask.id]);
         console.log(fTask.id);
         setTimeout(() => {
-            dispatch(addToFinishedTasks(fTask));
             dispatch(editStatus(fTask));
         }, 700);
     }
   return (
     <div  className='tasks sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
         {favTasks.map(task =>(
-            <div className={`task ${task.status === 'done' ?'hidden':''}  ${finishClass.includes(task.id) ?'finish' :''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
+            task.fav === true && (
+                <div className={`task ${task.fav === false ?'hidden':''}  ${task.status === true ?'finish hidden':''}  ${finishClass.includes(task.id) ?'finish' :''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
                 <div className="top">
                     <div className='left'>
                         <h2>{task.title}</h2>
@@ -57,7 +53,6 @@ const Fav = () => {
                     <p>End Date: <span>{task.date}</span></p>
                     <div className="icons">
                         <FaHeart className={`fav ${task.fav === true ? 'fill' : ''}`} onClick={(e)=>{
-                            dispatch(addToFavTasks({...task,fav:true}));
                             dispatch(editFav(task));
                         }}/>
                         <Link to={`tasks/${task.id}`}><CiEdit className='edit' /></Link>
@@ -65,6 +60,7 @@ const Fav = () => {
                     </div>
                 </div>
             </div>
+            )
         ))}
     </div>
   )

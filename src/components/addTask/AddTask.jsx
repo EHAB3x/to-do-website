@@ -21,7 +21,7 @@ const AddTask = () => {
                 }
         })
             if(count === 0){
-                dispatch(addTask({title,desc,category,date,status:"in progress"}))
+                dispatch(addTask({title,desc,category,date,status:false}))
                 setTitle('')
                 setDesc('')
                 setCategory('')
