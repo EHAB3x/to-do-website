@@ -4,10 +4,16 @@
 body {
   margin: 0;
   font-family:cursive;
-    background-color: #f5f7fb;
+  background-color: #f5f7fb;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
 }
