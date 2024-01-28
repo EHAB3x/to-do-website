@@ -98,16 +98,25 @@
 }
 .tasks .task .bottom{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
+}
+.tasks .task .bottom p span{
+    font-weight: bold;
+}
+.tasks .task .bottom .icons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
     font-size: 20px;
 }
-.tasks .task .bottom svg{
+.tasks .task .bottom .icons svg{
     cursor: pointer;
+    font-size: 22px;
 }
-.tasks .task .bottom svg.fav{
+.tasks .task .bottom .icons svg.fav{
     fill: transparent;
-    stroke: red;
+    stroke: #5458b4;
     stroke-opacity: 1;
     stroke-width: 20px;
     transition: .3s ease-in-out;
@@ -116,6 +125,12 @@
     -ms-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
 }
-.tasks .task .bottom svg.fav.fill{
-    fill: red;
+.tasks .task .bottom .icons svg.fav.fill{
+    fill: #5458b4;
+}
+.tasks .task .bottom .icons svg.edit{
+    color: #5458b4;
+}
+.tasks .task .bottom .icons svg.del{
+    color: #e91e63;
 }

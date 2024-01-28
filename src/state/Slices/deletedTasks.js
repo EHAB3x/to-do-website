@@ -5,7 +5,7 @@ export const deletedTasks = createSlice({
     name: 'deletedTasksSlice',
     reducers:{
         addToDeletedTasks:(state,action)=>{
-            const deletedTasksClone = {...action.payload};
+            const deletedTasksClone = {id:state.length,...action.payload};
             state.push(deletedTasksClone);
         }
     }

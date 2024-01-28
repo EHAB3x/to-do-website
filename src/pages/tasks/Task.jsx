@@ -13,10 +13,12 @@ const Task = () => {
 
     const deletedTask =(deletedTask)=>{
         setDeleteClass([...deleteClass,deletedTask.id]);
+        deleteClass.filter(id => id !== deletedTask.id)
         setTimeout(() => {
+            setDeleteClass([])
             dispatch(addToDeletedTasks(deletedTask));
             dispatch(deleteTask(deletedTask));
-        }, 500);
+        }, 700);
     }
   return (
     <div  className='tasks sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
@@ -38,9 +40,12 @@ const Task = () => {
                 </div>
 
                 <div className="bottom mt-[8%]">
+                    <p>End Date: <span>{task.date}</span></p>
+                    <div className="icons">
                         <FaHeart className='fav' onClick={(e)=>e.currentTarget.classList.toggle('fill')}/>
                         <CiEdit className='edit'/>
                         <MdDeleteOutline className='del'  onClick={()=>deletedTask(task)}/>
+                    </div>
                 </div>
             </div>
         ))}
