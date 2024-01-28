@@ -51,7 +51,7 @@
     -moz-transition: .3s ease-in-out;
     -ms-transition: .3s ease-in-out;
     -o-transition: .3s ease-in-out;
-    border: 1px solid gray,
+    border: 0px solid gray,
 }
 .sidebar .sidebar_body nav a.active svg{
     color: white;
