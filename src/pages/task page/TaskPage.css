@@ -60,6 +60,13 @@
     outline: 0;
     width: 100%;
 }
+.taskPage form textarea{
+    resize:vertical;
+    margin-bottom: 0;
+}
+.taskPage form textarea:disabled{
+    resize: none;
+}
 .taskPage form label::before{
     content: "";
     position: absolute;
