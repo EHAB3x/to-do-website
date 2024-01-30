@@ -35,7 +35,7 @@ const Done = () => {
     <div  className='tasks sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
         {doneTasks.map(task =>(
             task.status === true && (
-                <div className={`task ${task.status === true ? 'finish' : ''} ${task.delete === true ?'hidden':''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
+                <div className={`task  ${deleteClass.includes(task.id) ?'delete' :''} ${finishClass.includes(task.id) ?'delete' :'finish'}  ${task.delete === true ?'hidden':''}`} key={task.id}>
                 <div className="top">
                     <div className='left'>
                         <h2>{task.title}</h2>
