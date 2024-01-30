@@ -22,13 +22,14 @@ const TaskPage = () => {
         setDate(task.date);
         setNotes(task.notes)
     },[task]);
-    console.log(task);
     const allowEdit = ()=>{
         const inputs = document.querySelectorAll('.taskPage form input');
+        const textarea = document.querySelector('.taskPage form textarea');
 
         inputs.forEach(input => {
             input.disabled = !editBool;
-        })
+        });
+        textarea.disabled = !editBool;
         setEditBool(!editBool);   
     }
   return (
