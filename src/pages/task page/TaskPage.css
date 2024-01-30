@@ -1,0 +1,54 @@
+.taskPage{
+    display: flex;
+    justify-content: center;
+}
+.taskPage form{
+    background-color: white;
+    padding:20px 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 2px 2px 8px 0px;
+}
+.taskPage form label{
+    margin: 15px 0 0px;
+}
+.taskPage form input{
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    padding: 5px;
+    background-color: #f5f7fb;
+    margin: 5px 0 15px;
+    outline: 0;
+}
+.taskPage form input:disabled{
+    background-color: white;
+    padding: 5px 0;
+}
+.taskPage form span{
+    width: 100%;
+    background-color:#5458b4;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+.taskPage form span:hover{
+    background-color:#3f4299;
+}

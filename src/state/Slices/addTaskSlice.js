@@ -5,7 +5,7 @@ export const taskSlice = createSlice({
     name: 'taskSlice',
     reducers:{
         addTask:(state,action)=>{
-            const taskClone = {...action.payload, id:state.length, key:state.length, fav:false, delete:false};
+            const taskClone = {...action.payload, id:state.length, key:state.length, fav:false, delete:false,notes:''};
             state.push(taskClone);
         },
         editDelete:(state,action)=>{
@@ -17,8 +17,11 @@ export const taskSlice = createSlice({
         editFav:(state,action)=>{
             state[action.payload.id].fav = !action.payload.fav;
         },
+        editTask:(state,action)=>{
+            state[action.payload.id] = {...state[action.payload.id],...action.payload}
+        }
     }
 })
 
-export const {addTask, editDelete, editStatus,editFav} = taskSlice.actions;
+export const {addTask, editDelete, editStatus,editFav,editTask} = taskSlice.actions;
 export default taskSlice.reducer;

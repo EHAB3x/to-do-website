@@ -33,7 +33,7 @@ const Fav = () => {
     <div  className='tasks sm:px-[20px] px-[20px] grid sm:grid-cols-3 sm:gap-16 gap-8'>
         {favTasks.map(task =>(
             task.fav === true && (
-                <div className={`task ${task.fav === false ?'hidden':''}  ${task.status === true ?'finish hidden':''}  ${finishClass.includes(task.id) ?'finish' :''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
+                <div className={`task ${task.fav === false ?'hidden':''}  ${task.status === true ?'finish hidden':''} ${task.delete === true ?'hidden':''}  ${finishClass.includes(task.id) ?'finish' :''}  ${deleteClass.includes(task.id) ?'delete' :''}`} key={task.id}>
                 <div className="top">
                     <div className='left'>
                         <h2>{task.title}</h2>
@@ -55,7 +55,7 @@ const Fav = () => {
                         <FaHeart className={`fav ${task.fav === true ? 'fill' : ''}`} onClick={(e)=>{
                             dispatch(editFav(task));
                         }}/>
-                        <Link to={`tasks/${task.id}`}><CiEdit className='edit' /></Link>
+                        <Link to={`/tasks/${task.id}`}><CiEdit className='edit' /></Link>
                         <MdDeleteOutline className='del'  onClick={()=>deletedTask(task)}/>
                     </div>
                 </div>

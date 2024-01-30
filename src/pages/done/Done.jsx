@@ -57,7 +57,7 @@ const Done = () => {
                         <FaHeart className={`fav ${task.fav === true ? 'fill' : ''}`} onClick={(e)=>{
                             dispatch(editFav(task));
                         }}/>
-                        <Link to={`tasks/${task.id}`}><CiEdit className='edit' /></Link>
+                        <Link to={`/tasks/${task.id}`}><CiEdit className='edit' /></Link>
                         <MdDeleteOutline className='del'  onClick={()=>deletedTask(task)}/>
                     </div>
                 </div>

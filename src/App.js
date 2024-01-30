@@ -11,6 +11,7 @@ import Task from './pages/tasks/Task';
 import Fav from './pages/fav/Fav';
 import Done from './pages/done/Done';
 import Delete from './pages/delete/Delete';
+import TaskPage from './pages/task page/TaskPage';
 
 function App() {
   return (
@@ -40,6 +41,8 @@ function App() {
             <Route path='/done' element={<Done/>}/>
 
             <Route path='/delete' element={<Delete/>}/>
+
+            <Route path='/tasks/:taskId' element={<TaskPage/>}/>
           </Routes>
         </div>
       </div>
